@@ -1,0 +1,173 @@
+<div id="rightbar" class="all">
+  <ul style="display: block">
+    <li class="title">
+      &nbsp;Compositional verification Process
+      <div class="content">
+        <ul class="content">
+          <!-- <li [class.selected]="step === 1">
+            &nbsp;步骤 1: 载入本体  
+          </li> -->
+          <li [class.selected]="step === 1 || step === 4">
+            &nbsp;Step 1: Identify system boundaries
+            <ul style="background: #1874CD">
+              <li [class.selectedli]="step === 1">1.1: Design machine.</li>
+              <li [class.selectedli]="step === 2">1.2: Identify domains.</li>
+              <li [class.selectedli]="step === 3">1.3: Connect interactions.</li>
+              <li [class.selectedli]="step === 4">1.4: Check context diagram.</li>
+            </ul>
+          </li>
+          <li [class.selected]="step === 5 || step === 6">
+            &nbsp;Step 2: Identify system requirements
+            <ul style="background: #1874CD">
+              <li [class.selectedli]="step === 5">2.1: Identify requirements.</li>
+              <li [class.selectedli]="step === 6">2.2: Identify references.</li> 
+            </ul>
+          </li>
+          <li [class.selected]="step === 7">
+            &nbsp;Step 3: Deduce software behavior
+          </li>
+          <li [class.selected]="step === 8">
+            &nbsp;Step 4: Check problem diagram
+          </li>
+          <li [class.selected]="step === 9 || step === 10">
+            &nbsp;Step 5: Construct the scenario graphs
+            <ul style="background: #1874CD">
+              <li [class.selectedli]="step === 9">5.1: Draw scenario graph.</li>
+              <li [class.selectedli]="step === 10">5.2: Check scenario graph.</li>
+            </ul>
+          </li>
+          <li [class.selected]="step === 11">
+            &nbsp;Step 6: Problem decoupling.
+          </li>
+          <li [class.selected]="step === 12 || step === 13">
+            &nbsp;Step 7: Problem projection.
+            <ul style="background: #1874CD">
+              <li [class.selectedli]="step === 12">7.1: Check well-formation.</li>
+              <li [class.selectedli]="step === 13">7.2: Projection.</li>
+              <li [class.selectedli]="step === 14">7.3: Generate software requirements specification.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </li><br>
+    <button class='btn1' id="back" (click)="back()" [class.disable]="step == 1">Back</button>
+    <button class='btn2' id="next" (click)="check()">Next</button>
+
+    <li *ngIf="!open1;else elseOpen1" (click)="setOpen1()" class="title">&nbsp;+ Diagram</li>
+    <ng-template #elseOpen1>
+      <li (click)="setOpen1()" class="title">&nbsp;- Diagram</li>
+      <div class="list">
+        <ul *ngIf="project">
+          <li>
+            {{project.title}}<br>
+            <ul>
+              {{project.contextDiagram.title}}
+              <br>
+            </ul>
+            <ul>
+              {{project.problemDiagram.title}}
+              <br>
+            </ul>
+            <ul *ngIf="project.scenarioGraphList.length != 0">
+              SecnarioGraph<br>
+              <li *ngFor="let SG of project.scenarioGraphList">
+                {{SG.title}}
+                <br>
+              </li>
+            </ul>
+            <ul *ngIf="project.subProblemDiagramList.length != 0">
+              subProblemDiagram<br>
+              <li *ngFor="let SPD of project.subProblemDiagramList">
+                {{SPD.title}}<br>
+              </li>
+            </ul>
+        </ul>
+      </div>
+    </ng-template>
+    <li *ngIf="!open2;else elseOpen2" (click)="setOpen2()" class="title">&nbsp;+ Phenomenon</li>
+    <ng-template #elseOpen2>
+      <li (click)="setOpen2()" class="title">&nbsp;- Phenomenon</li>
+      <div class="content">
+        <table *ngIf="open2" class="content">
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>PheType</th>
+          </tr>
+          <tr *ngFor="let phe of pheList">
+            <td>phe{{phe.phenomenon_no}}</td>
+            <td>{{phe.phenomenon_name}}</td>
+            <td>{{phe.phenomenon_type}}</td>
+          </tr>
+        </table>
+      </div>
+    </ng-template>
+    <li *ngIf="!open3;else elseOpen3" (click)="setOpen3()" class="title">&nbsp;+ Interaction</li>
+    <ng-template #elseOpen3>
+      <li (click)="setOpen3()" class="title">&nbsp;- Interaction</li>
+      <div class="content">
+        <table *ngIf="open3" class="content">
+          <tr>
+            <th>Name</th>
+            <th>Initiator</th>
+            <th>Receiver</th>
+            <th>Content</th>
+          </tr>
+          <tr *ngFor="let phe of pheList">
+            <td>int{{phe.phenomenon_no}}</td>
+            <td>{{phe.phenomenon_from}}</td>
+            <td>{{phe.phenomenon_to}}</td>
+            <td>{{phe.phenomenon_name}}</td>
+          </tr>
+        </table>
+      </div>
+    </ng-template>
+    <li *ngIf="!open4;else elseOpen4" (click)="setOpen4()" class="title">&nbsp;+ Reference</li>
+    <ng-template #elseOpen4>
+      <li (click)="setOpen4()" class="title">&nbsp;- Reference</li>
+      <div class="content">
+        <table *ngIf="open4" class="content">
+          <tr>
+            <th>Name</th>
+            <th>Initiator</th>
+            <th>Receiver</th>
+            <th>Content</th>
+            <th>Constraint</th>
+          </tr>
+          <tr *ngFor="let phe of reqPheList">
+            <td>req{{phe.phenomenon_requirement}}</td>
+            <td>{{phe.phenomenon_from}}</td>
+            <td>{{phe.phenomenon_to}}</td>
+            <td>{{phe.phenomenon_name}}</td>
+            <td>{{phe.phenomenon_constraint}}</td>
+          </tr>
+        </table>
+      </div>
+    </ng-template>
+    <li *ngIf="!open5;else elseOpen5" (click)="setOpen5()" class="title">&nbsp;+ Other Information</li>
+    <ng-template #elseOpen5>
+      <li (click)="setOpen5()" class="title">&nbsp;- Other Information</li>
+      <div class="content">
+        <table *ngIf="open5" class="content">
+          <tr>Interface:</tr>
+          <tr *ngFor="let interface of project.contextDiagram.interfaceList">
+            <td>{{interface.interface_description}}</td>
+          </tr>
+          <br>
+          <tr>Reference:</tr>
+          <tr *ngFor="let constraint of project.problemDiagram.constraintList">
+            <td>{{constraint.constraint_description}}</td>
+          </tr>
+          <tr *ngFor="let reference of project.problemDiagram.referenceList">
+            <td>{{reference.reference_description}}</td>
+          </tr>
+          <br>
+          <tr *ngFor="let req of project.problemDiagram.requirementList">
+            <td>req{{req.requirement_no}}: {{req.requirement_context}}</td>
+          </tr>
+        </table>
+      </div>
+    </ng-template>
+  </ul>
+
+</div>

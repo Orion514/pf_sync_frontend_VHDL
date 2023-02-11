@@ -1,0 +1,13 @@
+#monaco-editor-id {
+  z-index: -1;
+  position: absolute;
+  float: left;
+  top: 10.1%;
+  /* 12%; */
+  left: 0%;
+  /* 1%; */
+  width: 100%;
+  /* 97%; */
+  height: 89.1%;
+  border: 1px solid grey;
+}

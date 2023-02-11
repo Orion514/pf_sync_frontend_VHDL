@@ -1,0 +1,603 @@
+div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  }
+
+.main {
+	/* text-align: center; */
+	background: white;
+	position: absolute;
+	top: 9.1%;
+	left: 4%;
+	width: 78%;
+	height: 90.1%;
+	float: center;
+	z-index: -1;
+}
+  /*tab标签*/
+  .tab {
+	position: relative;
+	/* float: ; */
+	top: -1.9%;
+	left: -3%;
+	width: 100%;
+	height: 3.4%;
+	z-index: 3;
+	/* background: white; */
+  }
+
+  ul li {
+	position: relative;
+	/*          */
+	margin: 0% 0px 0% 0.1%;
+	width: 14%;
+	height: 28px;
+	/* border:1px solid #000; */
+	/* word-spacing:30px; */
+	/*          */
+	text-align: center;
+	list-style-type: none;
+	float: left;
+	display: block;
+	line-height: 28px;
+	list-style-type:none;
+	cursor: pointer;
+	color: white;
+	background: #7EC0EE;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	overflow: hidden;
+	z-index: 1;
+  }
+
+ul li:hover {
+	opacity: 0.5;
+	display: block;
+}
+ul li:focus{
+	background-color:#36648B;
+}
+  /*画板*/
+  .content {
+	/* position: relative; */
+	/* top:3.4%; */
+	position: absolute;
+	top: 3.5%;
+	/* top:0; */
+	left: 0;
+	width: 100%;
+	height: 96.5%;
+	float: left;
+	/* overflow-y:auto; */
+  }
+
+  /*弹出层*/
+  #popLayer {
+	display: none;
+	background-color: #B3B3B3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	-moz-opacity: 0.8; /*透明度*/
+	opacity: .80;
+	filter: alpha(opacity=80); /*背景透明度*/
+  }
+
+  .popBox {
+	border-radius: 5px;
+	background-color: white;
+	padding: 10px;
+	top:50%;
+	width:480px;
+	height: auto;
+	border: 1px solid #ccc;
+	text-align: center;
+	display: none;
+	z-index: 11;
+	position: relative;
+	left: 0;
+	transform: translateY(-50%);
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	overflow: hidden;
+  }
+
+  #deletePopBox {
+	display: none;
+	background-color: #FFFFFF;
+	border: 1px solid #ccc;
+	z-index: 11;
+	width: 50px;
+	height: 20px;
+	position: absolute;
+
+	/*top:0;
+	  right:0;
+	  left:0;
+	  bottom:0;
+	  margin:5px;*/
+	padding: 5px;
+  }
+
+  #LinkPopBox {
+	width: 45%;
+  }
+  /*弹出层标题*/
+  span {
+	margin: 20px;
+	top: 200px;
+  }
+  /*左上角关闭按钮*/
+  .close {
+	position: absolute;
+	margin: 0;
+	margin-right: 2px;
+	right: 0;
+	padding: 8px 16px;
+	border-radius: 2px;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: #F8F8F8;
+	border: none;
+
+  }
+
+	.close:hover {
+	  background-color: #2D2C3B;
+	  /* opacity: 0.8; */
+	  font-weight: normal;
+	}
+
+	.close:disabled {
+	  /* opacity: 0.5; */
+	  cursor: auto;
+	}
+
+  .button {
+	position: relative;
+	margin: 0;
+	display: inline-flex;
+	float: center;
+	margin-right: 2px;
+	/* right: 0; */
+	top: 20%;
+	padding: 8px 16px;
+	border-radius: 2px;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: #F8F8F8;
+	border: none;
+  }
+
+  /*表单*/
+  form {
+	top: 20px;
+	border-radius: 0.1rem;
+	background-color: white;
+	padding: 0.5rem;
+	/* margin: auto;  */
+	margin: 0.5rem;
+	width: 98%;
+	border: 1px solid #ccc;
+  }
+  textarea {
+	width: 98%;
+	padding: 1%;
+	margin: 1%;
+	display: block;
+	border: 1px solid #ccc;
+	border-radius: 0.1rem;
+	box-sizing: border-box;
+  }
+  input[type="text"],
+  select {
+	width: 98%;
+	padding: 1%;
+	margin: 1%;
+	display: block;
+	border: 1px solid #ccc;
+	border-radius: 0.1rem;
+	box-sizing: border-box;
+  }
+  
+  input.inputLeft {
+	width: 91%;
+	padding: 1% 0px 1% 1%;
+	margin: 1% 0px 1% 1%;
+	float: left;
+	position: relative;
+	display: block;
+	border: 1px solid #ccc;
+	border-right: #ffffff;
+	border-radius: 0.1rem;
+	box-sizing: border-box;
+  }
+  select.inputRight {
+	width: 6%;
+	padding: 1% 1% 1% 0%;
+	margin: 1% 1% 1% 0%;
+	position: relative;
+	float: right;
+	display: block;
+	border: 1px solid #ccc;
+	border-left: #ffffff;
+	border-radius: 0.1rem;
+	box-sizing: border-box;
+  }
+
+  .phes {
+	width: 400px;
+	padding: 10px 10px;
+	margin: 10px 10px;
+	display: block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+  }
+  /* input[type=submit] {
+	width: 100px;
+	background-color: #1874CD;
+	color: white;
+	padding: 10px 10px;
+	margin: 10px 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  } */
+  input[type="submit"] {
+	background-color: #1874cd;
+	color: white;
+	padding: 1%;
+	margin: 1%;
+	border: none;
+	border-radius: 0.1rem;
+	cursor: pointer;
+  }
+  .button1 {
+	position: relative;
+	left: 10px;
+  }
+
+  .button2 {
+	position: relative;
+	left: 30px;
+  }
+
+  .button3_1 {
+	position: relative;
+	left: 0px;
+  }
+
+  .button3_2 {
+	position: relative;
+	left: 10px;
+  }
+
+  .button3_3 {
+	position: relative;
+	left: 20px;
+  }
+
+  label {
+	float: left;
+	width: 400px;
+	text-align: left;
+	line-height: 25px;
+	margin:10px 10px;
+	left: 0;
+	display: block;
+  }
+  /*容纳表格内容的DIV,这个DIV上放置滚动条*/
+  .content1{
+	position: relative;
+	/*top:30px;*/
+	/* left: -30px; */
+	height: 100px;
+	width: 400px;
+	margin: 10px;
+	padding: 0px;
+	border: 1px solid #ccc;
+	overflow-y: scroll; /*右边总是显示滚动条*/
+	overflow-x: hidden;
+  }
+	/*真正存放内容的DIV*/
+	.content1 div {
+	  width: 90%; /*与表头的DIV宽度相同*/
+	}
+
+  table tr td {
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+	/*border:1px solid #ccc;*/
+	overflow: hidden;
+  }
+
+  td:hover {
+	background-color: #eeeeee;
+	/* opacity: 0.8; */
+	font-weight: normal;
+  }
+
+  .delete {
+	position: absolute;
+	display: none;
+	background-color: #FFFFFF;
+	z-index: 11;
+	/*top:30px;
+	  left:0px;*/
+	height: 40px;
+	width: 60px;
+	margin: 0px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	z-index: 11;
+  }
+
+  details{
+	position: relative;
+	width: 17%;
+	float:left;
+	text-align:left;
+	display: block;
+	line-height: 20px;
+	/* padding: 4px 10px; */
+	padding: 4px;
+	/* �������� */
+	margin:0% 0% 0% 0.2%;
+	list-style-type:none;
+	cursor: pointer;
+	/* color: black; */
+	color: white;
+	/* background: #fafafa; */
+	background: #7EC0EE;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	overflow: hidden;
+	z-index: 1;
+}
+summary{
+	text-align: center;
+}
+summary:hover{
+	opacity: 0.5;
+	display: block;
+	cursor: pointer;
+}
+.IntpopBox {
+	position: relative;
+	display: none;
+	margin: 20px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 250px;
+    height: 150px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+}
+.IntpopBox .table{
+	position: relative;
+	height: 32px;
+	background: #f8f8f8;
+}
+.IntpopBox form{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+.IntpopBox label{
+	position: relative;
+	float:left;
+	top: 10px;
+	left: 15px;
+	width: 80px;
+	height: 30px;
+}
+.IntpopBox select{
+	float:right;
+	width: 100px;
+	right: 20px;
+	height: 40px;
+}
+.IntpopBox .button1 {
+	position: relative;
+	float: left;
+	top: 15px;
+	left: 10px;
+	bottom: 8px;
+  }
+
+.IntpopBox .button2 {
+	/* position: relative; */
+	float: left;
+	top: 5px;
+	left: 10px;
+	bottom: 5px;
+}
+.DecisionpopBox {
+	display: none;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 300px;
+    height: 170px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+}
+.DecisionpopBox input{
+	width: 200px;
+	display: inline-block;
+}
+.DecisionpopBox span{
+	margin: 0;
+}
+#scenarioGraphTabList{
+	position: relative;
+}
+#subProblemTabList{
+	position: relative;
+}
+p{
+	margin: 10px;
+	z-index: 10;
+}
+.DelaypopBox {
+	display: none;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 350px;
+    height: 170px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+}
+.DelaypopBox input{
+	width: 200px;
+	display: inline-block;
+}
+.DelaypopBox span{
+	margin: 0;
+}
+.delayType{
+	width: 80px;
+	display: inline-block;
+	font-size: 18px;
+}
+.LinepopBox {
+	display: none;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 350px;
+    height: 170px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+	overflow:auto;
+}
+.LinepopBox input{
+	width: 200px;
+	display: inline-block;
+}
+.LinepopBox span{
+	margin: 0;
+}
+#EditMachinePopBox {
+	display: none;
+	margin: 20px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 300px;
+    height: 120px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+}
+input[type=submit] {
+	width: 100px;
+	background-color: #1874CD;
+	color: white;
+	padding: 10px 10px;
+	margin: 10px 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.DomainpopBox {
+	display: none;
+	margin: 20px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 300px;
+    height: 170px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+}
+.InterfacepopBox {
+	display: none;
+	margin: 20px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 300px;
+    height: 400px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+	overflow:auto;
+}
+.InterfacepopBox table{
+	width: 100%;
+	text-align: left;
+	/* white-space: 3px; */
+}
+.ReferencepopBox {
+	display: none;
+	margin: 20px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 500px;
+    height: 400px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+	overflow:auto;
+}
+.ReferencepopBox table{
+	width: 100%;
+	padding: 0 7px 0 0;
+	/* white-space: 3px; */
+}
+.ReferencepopBox table th{
+	/* width: 20%; */
+	text-align: left;
+}
+.ReferencepopBox table td{
+	/* width: 20%; */
+	text-align: center;
+}
+.table{
+	position: relative;
+	height: 32px;
+	background: #F8F8F8;
+	text-align: left;
+}
+#ConditionPopBox{
+	height: 210px;
+}
+#ConditionPopBox .button1{
+	top: 20px;
+}
+#ConditionPopBox .button2{
+	top: 0px;
+}

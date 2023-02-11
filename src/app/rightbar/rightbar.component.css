@@ -1,0 +1,121 @@
+.all{
+	z-index: -1;
+	position: absolute;
+	top:11.1%;
+	right: 0;
+	/* left:93%; */
+	width:20%;
+	/* 17%; */
+	height:88.1%;
+	/* 87.8%; */
+	background: #1874CD;
+	float:right;
+	overflow-y:auto; 
+	/* overflow-x:auto; */
+	white-space: nowrap;
+	color:white;
+}
+button{
+	position: relative;
+	margin:0% 5% 8% 15%;
+	display: inline;
+	/* align-items: center; */
+	padding: 8px 16px;
+	border-radius: 2px;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: GhostWhite;
+	border: none;
+}
+
+
+button:hover {
+	background-color:lavender;
+  	/* opacity: 0.8; */
+  	font-weight: normal;
+}
+button:disabled {
+  	/* opacity: 0.5; */
+	  cursor: auto;
+	  color:red;
+}
+span { 
+	position:relative; 
+	/* right:10px;  */
+	/* top:8px;  */
+	cursor: pointer; 
+	width: 100%;
+	background: #36648B;
+}
+ul{
+    padding: 0;
+	margin: 0;
+    list-style-type: none;
+}
+ul li ul li ul li{
+	position:relative; 
+	left:12%;
+}
+/* th{
+	min-width:200px 
+} */
+.title{
+	position:relative; 
+	width:100%;
+	background: #36648B;
+	margin-bottom:1px;
+	cursor: pointer;
+}
+.content{
+	position: relative; 
+	/* width:100%; */
+	background:#1874CD;
+	cursor: default;
+	overflow-x:auto;
+	overflow-y:auto;
+}
+.content th,
+.content td{
+	padding: 5px;
+}
+.list{
+	position: relative; 
+	list-style-type: disc;
+	background:#1874CD;
+	cursor: default;
+	overflow-x:auto;
+	overflow-y:auto;
+}
+.list ul li{
+	list-style-type: disc;
+	position: relative; 
+	/* float: left; */
+	left:0;
+}
+.list ul li ul{
+	position: relative; 
+	left:10%;
+}
+.list ul li ul li{
+	position: relative; 
+	left:10%;
+}
+.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+.selectedli{
+	color: #CFD8DC;
+}
+.openfile{
+	display: none;
+}
+.swal-text {
+	background-color: #FEFAE3;
+	padding: 17px;
+	border: 1px solid #F0E1A1;
+	display: block;
+	margin: 22px;
+	text-align: center;
+	color: #61534e;
+  }

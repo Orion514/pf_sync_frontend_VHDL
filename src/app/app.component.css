@@ -1,0 +1,253 @@
+.main {
+  /* position: relative; */
+  position: absolute;
+  float: top;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  position: relative;
+  /* top:0.49px; */
+  /* left: 0.49px; */
+  width: 6%;
+  height: 100%;
+}
+
+#resize {
+  width: 5px;
+  height: 100%;
+  cursor: w-resize;
+  float: left;
+}
+
+#popLayer {
+  display: none;
+  background-color: #B3B3B3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  filter: alpha(opacity=80); /* 只支持IE6、7、8、9 */
+}
+
+/*弹出层*/
+#popBox {
+  display: none;
+  background-color: #FFFFFF;
+  z-index: 11;
+  width: 700px;
+  height: 460px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+/*弹出层*/
+#Strategy {
+  display: none;
+  background-color: #FFFFFF;
+  z-index: 11;
+  width: 60%;
+  height: 60%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#projectPopBox {
+  display: none;
+  background-color: #FFFFFF;
+  z-index: 11;
+  width: 18%;
+  height: 15%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+.element-input{
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 5%;
+  margin: auto;
+}
+.button1 {
+  position: relative;
+  left: 10%;
+}
+
+.button2 {
+  position: relative;
+  left: 20%;
+}
+
+.table {
+  position: relative;
+  height: 32px;
+  background: #F8F8F8;
+}
+
+.content {
+  position: relative;
+  height: 428px;
+  /* height: 100%; */
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.close {
+  position: relative;
+  margin: 0;
+  display: inline-flex;
+  float: right;
+  margin-right: 2px;
+  right: 0;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #F8F8F8;
+  border: none;
+}
+
+  .close:hover {
+    background-color: #2D2C3B;
+    /* opacity: 0.8; */
+    font-weight: normal;
+  }
+
+  .close:disabled {
+    /* opacity: 0.5; */
+    cursor: auto;
+  }
+
+.button {
+  position: relative;
+  margin: 0;
+  display: inline-flex;
+  float: center;
+  margin-right: 2px;
+  /* right: 0; */
+  left: 55px;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #F8F8F8;
+  border: none;
+}
+
+  .button:hover {
+    background-color: #DCDCDC;
+    /* opacity: 0.8; */
+    font-weight: normal;
+  }
+
+  .button:disabled {
+    /* opacity: 0.5; */
+    cursor: auto;
+  }
+
+.OpenProject {
+  display: none;
+  margin: 20px;
+  background-color: #FFFFFF;
+  /* background-color: yellow; */
+  z-index: 11;
+  width: 350px;
+  height: 400px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+
+}
+
+  .OpenProject label {
+    float: center;
+    left: 40px;
+  }
+
+.showPro {
+  position: relative;
+  width:100%;
+  cursor: default;
+  /* width: 250px; */
+  height: 300px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+/* ul{
+	left:0;
+	background: yellow;
+}
+ul li{
+    padding: 0;
+	margin: 0;
+	list-style-type: none;
+	left:0;
+}
+ul li ul li{
+	position:relative; 
+	left:5px;
+} */
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+/* ul li ul li ul li{
+	position:relative; 
+	left:12%;
+} */
+.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+
+
+.OntShow {
+
+	display: none;
+    background-color: #FFFFFF;
+    z-index: 11;
+    width: 50%;
+    height: 50%;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+	margin:auto;
+
+}
+.owltable{
+	position: relative;
+	height: 32px;
+	background: #F8F8F8;
+}
+.showOntology{
+	position: relative;
+	/* height: 300px; */
+	height: 100%;
+	width:100%;
+	overflow-x:auto;
+	overflow-y:auto;
+}
+

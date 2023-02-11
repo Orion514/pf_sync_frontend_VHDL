@@ -1,0 +1,188 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main">
+  <app-topbar (openEvent)="getProjects($event)" (openOwlEvent)="getOwls($event)" (openPOwlEvent)="getPOwls($event)">
+  </app-topbar>
+  <app-ngx-editor></app-ngx-editor>
+  <app-drawingboard></app-drawingboard>
+  <!-- <router-outlet></router-outlet> -->
+  <app-leftbar></app-leftbar>
+  <app-rightbar (errorsEvent)="getErrors($event)"></app-rightbar>
+  <div id="popLayer"></div>
+  <div id="popBox">
+    <div class="table">
+      <span class="label">检查结果:</span>
+      <button class="close" (click)="close('popBox')">X</button>
+    </div>
+    <div class="content">
+      <div *ngFor="let error of errors">
+        <div *ngIf="error.errorList.length > 0; else correct">
+          <p *ngIf="error.title != null">{{error.title}} 不是正确的情景图:</p>
+          <p *ngFor="let errMsg of error.errorList">
+            {{errMsg}}
+            <!-- <button class="button" (click)="getStrategy(errMsg)">strategy</button> -->
+          </p>
+        </div>
+        <ng-template #correct>
+          <p *ngIf="error.title != null">{{error.title}} 是正确的情景图.</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div id="Strategy">
+    <div class="table">
+      <span class="label">检查结果:</span>
+      <button class="close" (click)="close('Strategy')">X</button>
+    </div>
+    <div class="content">
+      <div *ngFor="let strategy of strategyList">
+        <p>
+          {{strategy}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <!---项目选择--->
+  <!-- open -->
+  <div id="OpenProject" class="OpenProject">
+    <div class="table">
+      <span class="label">OpenProject:</span>
+      <button class="close" (click)="close('OpenProject')">X</button>
+    </div>
+    <div class="showPro">
+      <form id="op">
+        <ul *ngFor="let pro of projects">
+          <li [class.selected]="project===pro" (click)="search(pro)">
+            {{pro}}
+            <ul *ngIf="project === pro">
+              <li *ngFor="let version of versions"><label><input type="radio" name="project" id="version"
+                    value="{{version}}">{{version}}</label></li>
+            </ul>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div style="position: absolute;bottom:10px;">
+      <button class="button" (click)="open()">Open</button>
+      <button class="button" (click)="close('OpenProject')">Cancel</button>
+    </div>
+  </div>
+
+  <!---eowl选择--->
+  <div id="OpenOwl" class="OpenProject">
+    <div class="table">
+      <span class="label">导入现有环境本体:</span>
+      <button class="close" (click)="close('OpenOwl')">X</button>
+    </div>
+    <div class="showPro">
+      <form id="op">
+        <ul *ngFor="let o of owls">
+          <li [class.selected]="owl===o" (click)="searchOwlVersions(o)">
+            <!-- <li [class.selected]="owl===o"> -->
+            {{o}}
+            <ul *ngIf="owl === o">
+              <li *ngFor="let owlVersion of owlVersions">
+                <label>
+                  <input type="radio" name="owl" id="owlVersion" value="{{owlVersion}}">
+                  {{owlVersion}}
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div style="position: absolute;bottom:10px;">
+      <button class="button" (click)="openOwl()">导入</button>
+      <button class="button" (click)="close('OpenOwl')">取消</button>
+    </div>
+  </div>
+
+  <!---powl选择--->
+  <div id="OpenPOwl" class="OpenProject">
+    <div class="table">
+      <span class="label">导入现有问题描述本体:</span>
+      <button class="close" (click)="close('OpenPOwl')">X</button>
+    </div>
+    <div class="showPro">
+      <form id="op">
+        <ul *ngFor="let po of pOwls">
+          <li [class.selected]="pOwl===po" (click)="searchPOwlVersions(po)">
+            {{po}}
+            <ul *ngIf="pOwl === po">
+              <li *ngFor="let pOwlVersion of pOwlVersions">
+                <label>
+                  <input type="radio" name="owl" id="pOwlVersion" value="{{pOwlVersion}}">
+                  {{pOwlVersion}}
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div style="position: absolute;bottom:10px;">
+      <button class="button" (click)="openPOwl()">导入</button>
+      <button class="button" (click)="close('OpenPOwl')">取消</button>
+    </div>
+  </div>
+
+  <!---遮挡层-->
+  <div id="popLayer"></div>
+  <!---新建项目--->
+  <div id="projectPopBox" class="popBox">
+    <span class="projectTitle">New Project</span>
+    <button class="close" (click)="closeBox()">X</button>
+    <form action="" method="post" name="elementInputForm" class="element-input" novalidate>
+      <label for="description">Description</label>
+      <input class="description" name="description" type="text" required>
+      <br><br>
+      <input type="submit" class="button1" value="Confirm" (click)="confirm()" />
+      <input type="submit" class="button2" value="Cancel" (click)="closeBox()" />
+    </form>
+  </div>
+
+  <div id="pOntShow" class="OntShow">
+    <div class="owltable">
+      <span class="label">问题描述本体展示</span>
+      <button class="close" (click)="close('pOntShow')">X</button>
+    </div>
+    <div class="showOntology">
+      <ul *ngFor="let node of nodes">
+        <li [class.selected]="clicknode===node" (click)="searchPOntNodes(node)">{{node}}
+          <ul *ngIf="clicknode === node">
+            <li *ngFor="let subnode of subnodes">{{subnode}}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="eOntShow" class="OntShow">
+    <div class="owltable">
+      <span class="label">环境本体展示</span>
+      <button class="close" (click)="close('eOntShow')">X</button>
+    </div>
+    <div class="showOntology">
+      <ul *ngFor="let node of eNodes">
+        <li [class.selected]="clicknode===node" (click)="searchEOntNodes(node)">{{node}}
+          <ul *ngIf="clicknode === node">
+            <ul *ngFor="let subnode of subnodes">
+              <li [class.selected]="clicknode1===subnode" (click)="searchEOntNodes1(subnode)">{{subnode}}
+                <ul *ngIf="clicknode1 === subnode">
+                  <!---<li *ngFor="let subnode1 of subnodes1">{{subnode1}}</li>-->
+                  <ul *ngFor="let subnode1 of subnodes1">
+                    <li [class.selected]="clicknode2===subnode1" (click)="searchEOntNodes2(subnode1)">{{subnode1}}
+                      <ul *ngIf="clicknode2 === subnode1">
+                        <li *ngFor="let subnode2 of subnodes2">{{subnode2}}</li>
+                      </ul>
+                  </ul>
+                </ul>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

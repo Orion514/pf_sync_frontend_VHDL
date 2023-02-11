@@ -1,0 +1,86 @@
+<div>
+  <!-- <img src=".../assets/icons/3.png"> -->
+  <nav style="text-align:center">
+    <ul>
+      <li>New
+        <ul>
+          <li (click)="newFile('diagram')">NewDiagram</li>
+          <li (click)="newFile('text')">NewText</li>
+        </ul>
+      </li>
+      <li (click)="merge()" [class.disable]="step >1">Merge</li>
+
+      <li>Upload
+        <ul>
+          <li (click)="uploadFile()">
+            Upload Project
+          </li>
+          <li (click)="uploadPF()">
+            Upload text pf
+          </li>
+        </ul>
+      </li>
+      <li>Open
+        <ul>
+          <li id="openDiagram" (click)="openProject('diagram')">OpenDiagram</li>
+          <li id="openText" (click)="openProject('text')">OpenText</li>
+        </ul>
+      </li>
+      <li (click)="saveProjectAndPf()">Save</li>
+      <li>
+        Download
+        <ul>
+          <li (click)="download()">XMLProject</li>
+          <li (click)="format()">TranslateFile</li>
+        </ul>
+      </li>
+      <li (click)="switchInterface()">Switch</li>
+      <li>
+        Ontology
+        <ul>
+          <li class='Pontology'>
+            Pontology
+            <ul>
+              <li (click)="uploadPOwl()">Upload</li>
+              <li (click)="openPOwl()">Existing Pontology</li>
+              <li (click)="pOntShow()">Show Pontology</li>
+              <li (click)="check()">Check</li>
+            </ul>
+          </li>
+          <li class='Eontology'>
+            Eontology
+            <ul>
+              <li (click)="uploadEOwl()">Upload</li>
+              <li (click)="openEOwl()">Existing Eontology</li>
+              <li (click)="eOntShow()">Show Eontology</li>
+              <!-- <li>Check</li> -->
+            </ul>
+          </li>
+
+
+        </ul>
+      </li>
+      <li><a href="http://re4cps.org/help">Help</a></li>
+      <!-- <li><a href="http://re4cps.org/login">Login</a></li> -->
+      <!-- <li> <a href="http://re4cps.org/workflow?from=diagrambaseddescription">Next Main Step </a> </li> -->
+
+    </ul>
+  </nav>
+  <h3 class="user">{{userName}}</h3>
+  <div class="tab"></div>
+  <form>
+    <input type="file" ng2FileSelect [uploader]="uploader" name="xmlFile" id="xmlFile" class="openfile" webkitdirectory
+      (change)="selectedFileOnChanged($event)" />
+    <!-- <input type="file" id="xmlFile" #picked    class="openfile"  multiple webkitdirectory   (click)="message=''"  (change)="onPicked(picked)"> -->
+  </form>
+  <form>
+    <input type="file" ng2FileSelect [uploader]="uploader" name="pfFile" id="pfFile" class="openfile"
+      (change)="selectedPFOnChanged($event)" />
+    <!-- <input type="file" id="xmlFile" #picked    class="openfile"  multiple webkitdirectory   (click)="message=''"  (change)="onPicked(picked)"> -->
+  </form>
+  <form>
+    <input type="file" ng2FileSelect [uploader]="uploader" name="owlFile" id="ontologyFile" class="openfile"
+      (change)="selectedOWLOnChanged($event)" />
+    <!-- <input type="file" id="xmlFile" #picked    class="openfile"  multiple webkitdirectory   (click)="message=''"  (change)="onPicked(picked)"> -->
+  </form>
+</div>

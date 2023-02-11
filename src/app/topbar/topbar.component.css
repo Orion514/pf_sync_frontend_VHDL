@@ -1,0 +1,111 @@
+div{
+	position: absolute;
+	float:top;
+	top:0;
+	width:100%;
+	height:12.2%;
+	background: #1874CD;
+	text-align:center;
+	
+}
+.tab{
+	position: relative;
+	background: white;
+	top:74.5%;
+	width: 100%;
+	height:25%;
+	color:black;
+}
+nav{
+	position: absolute;
+    z-index:4;
+	float:left;
+	position: absolute;
+	top:30%; 
+	left:6%;
+	margin:0 auto;
+}
+img{
+	position: relative;
+	top:5%;
+	left: 0.2%;
+	float:left;
+	width: 5.5%;
+}
+/* main menu */
+ul{
+    padding: 0;
+	margin: 0;
+	height: 30px;
+    list-style-type: none;
+}
+ul li:hover{          
+	opacity: 0.9;        
+}
+ul li a{
+	float: left;
+	position: relative;
+	color: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+}
+ ul li,ul li :visited{ 
+    float: left;
+	position: relative;
+	color: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+}
+
+/* second menu */
+ul li ul{
+  height:50px;
+  background: rgb(30, 118, 207);
+  display:none;
+  padding: 2px;
+}
+ul li:hover ul{
+  display:block;
+}
+/* thire menu */
+ul li ul li ul{
+	left: 120px;
+	top: -20%;
+	height:auto;	
+	width:auto;
+	/* padding: 2px; */
+	background: rgb(30, 118, 207);
+	position: absolute;
+	display:none;
+	text-align: center;
+	white-space: nowrap;
+}
+
+ul li ul li:hover ul{
+	display:block;
+	text-align: center;
+}  
+.tablabel{
+	position: relative;
+	left:1%;
+	color: black;
+}
+.openfile{
+	display: none;
+}
+
+.disable:hover{
+	  opacity: 1;
+	  cursor: not-allowed;
+}
+.user{
+	position: absolute;
+	/* float:right; */
+	right: 5%;
+	top: 10%;
+	color: white;
+}

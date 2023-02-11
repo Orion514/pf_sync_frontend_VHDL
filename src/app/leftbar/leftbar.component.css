@@ -1,0 +1,70 @@
+#leftbar{
+	z-index: -1;
+	position: absolute;
+	float: left;
+	top:11.1%;
+	left: 0;
+	width:4%;
+	height:88.1%;
+	border-color:#1874CD;
+	border-width: 8px;
+	/* border-right:1px solid #000; */
+	/* background: #D1EEEE; */
+	/* background-color: GhostWhite; */
+}
+.title{
+	position:relative; 
+	width:100%;
+	color: white;
+	background: #36648B;
+	margin-bottom:1px;
+	cursor: default;
+}
+ul{
+	width: 100%;
+	height: 100%;
+    padding: 0;
+	margin: 0;
+	list-style-type: none;
+	background-color: white;
+}
+button{
+	position: relative;
+	margin:20% 10%;
+	width:80%;
+	/* padding: 8px 16px; */
+	/* border-radius: 2px; */
+	/* font-size: 14px; */
+	cursor: pointer;
+	/* background-color: GhostWhite; */
+	background-color: white;
+	border: none;
+}
+#scenario-icon button{
+	margin:15% 10%;
+}
+button:hover {
+	background-color:lavender;
+  	opacity: 0.5;
+  	font-weight: normal;
+}
+
+button:disabled {
+  	/* opacity: 0.5; */
+  	cursor: auto;
+}
+img{
+	position: relative;
+	width:100%;
+	height:100%;
+	text-align:center;
+	align-self:center;
+}
+.disable button{
+	background: #DCDCDC;
+	cursor: not-allowed;
+}
+.disable button:hover{
+	background-color: #DCDCDC;
+  	opacity: 1;
+}

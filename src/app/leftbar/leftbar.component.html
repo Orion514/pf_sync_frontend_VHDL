@@ -1,0 +1,143 @@
+<div id="leftbar" style="border-style:solid;">
+  <ul id="problem-icon">
+    <!-- <li class="title">&nbsp;icon</li> -->
+    <li [class.disable]="step != 1">
+        <button [title]="'machine'" (click)="clickMachine()">
+          <img src="assets/icons/machine.png">
+        </button>
+    </li>
+
+    <li [class.disable]="step != 2">
+      <button [title]="'domain'" (click)="clickDomain()">
+        <img src="assets/icons/domain.png">
+      </button>
+    </li>
+    
+    <li [class.disable]="step != 5">
+      <button [title]="'requirement'" (click)="clickReq()">
+        <img src="assets/icons/requirement.png">
+      </button>
+    </li>
+
+    <li [class.disable]="step != 3">
+      <button [title]="'interface'" (click)="clickInterface()">
+        <img src="assets/icons/interface.png">
+      </button>
+    </li>
+
+    <li [class.disable]="step != 6">
+      <button [title]="'reference'" (click)="clickReference()">
+        <img src="assets/icons/reference.png">
+      </button>
+    </li>
+
+    <li [class.disable]="step != 6">
+      <button [title]="'constraint'" (click)="clickConstraint()">
+        <img src="assets/icons/constraint.png">
+      </button>
+    </li>
+  </ul>
+  <ul [class.disable]="step < 9" id="scenario-icon" style="display: none;">
+	<li>
+		<button [title]="'Start'" (click)="chooseElement('Start')">
+			<img src="assets/icons/start.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'End'" (click)="chooseElement('End')">
+			<img src="assets/icons/end.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'Decision'" (click)="chooseElement('Decision')">
+			<img src="assets/icons/decision.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'Merge'" (click)="chooseElement('Merge')">
+			<img src="assets/icons/merge.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'Dealy'" (click)="chooseElement('Delay')">
+			<img src="assets/icons/delay.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'Branch'" (click)="chooseElement('Branch')">
+			<img src="assets/icons/branch.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'BehaviorInteraction'" (click)="chooseElement('BehInt')">
+			<img src="assets/icons/BehInt.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'ConnectionInteraction'" (click)="chooseElement('ConnInt')">
+			<img src="assets/icons/ConnInt.png">
+		</button>
+	</li>
+	<!-- <li>
+		<button [title]="'SendInteraction'" (click)="chooseElement('SendInt')">
+			<img src="assets/icons/SendInt.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'ReceiveInteraction'" (click)="chooseElement('RecInt')">
+			<img src="assets/icons/RecInt.png">
+		</button>
+	</li> -->
+	<li>
+		<button [title]="'ExpectInteraction'" (click)="chooseElement('ExpInt')">
+			<img src="assets/icons/ExpInt.png">
+		</button>
+	</li>
+	<!-- <li>
+		<button [title]="'ExpectSendInteraction'" (click)="chooseElement('ExpSendInt')">
+			<img src="assets/icons/ExpSendInt.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'ExpectReceiveInteraction'" (click)="chooseElement('ExpRecInt')">
+			<img src="assets/icons/ExpRecInt.png">
+		</button>
+	</li> -->
+	<!-- <li>
+		<button [title]="'Precondition'" (click)="chooseElement('PreInt')">
+			<img src="assets/icons/PreInt.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'Postcondition'" (click)="chooseElement('PostInt')">
+			<img src="assets/icons/PostInt.png">
+		</button>
+	</li> -->
+	<li>
+		<button [title]="'BehaviorEnable'" (click)="chooseElement('BehEnable')">
+			<img src="assets/icons/hong.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'BehaviorOrder'" (click)="chooseElement('BehOrder')">
+			<img src="assets/icons/lan.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'Synchronization'" (click)="chooseElement('Synchrony')">
+			<img src="assets/icons/lv.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'ExpectOrder'" (click)="chooseElement('ExpOrder')">
+			<img src="assets/icons/cheng.png">
+		</button>
+	</li>
+	<li>
+		<button [title]="'ExpectEnable'" (click)="chooseElement('ExpEnable')">
+			<img src="assets/icons/zi.png">
+		</button>
+	</li>
+
+</ul>	
+</div>
